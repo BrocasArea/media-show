@@ -144,9 +144,9 @@
 <script>
     var query = parseQueryString();
     try {
-        $('#modal').click();
         new Clipboard('a')
     } catch (err) {
+        $('#modal').click();
     }
 
     $(window).on('load', function(){
