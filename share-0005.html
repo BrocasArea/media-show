@@ -145,11 +145,11 @@
 <script>
     var query = parseQueryString();
     new Clipboard('a')
-    try {
-        new Clipboard('a')
-    } catch (err) {
-        $('#modal').click();
-    }
+    // try {
+    //     new Clipboard('a')
+    // } catch (err) {
+    //     $('#modal').click();
+    // }
 
     $(window).on('load', function(){
         $('#invitation_code').val(`::${query.invitation_code}::`);
