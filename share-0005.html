@@ -145,6 +145,8 @@
 <script>
     var clipboard = new ClipboardJS('a');
 
+    $('#modal').click();
+
     clipboard.on('success', function(e) {
         console.info('Action:', e.action);
         console.info('Text:', e.text);
