@@ -121,13 +121,13 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle" style="font-size: 18px;">请手动复制粘贴邀请码</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle" style="font-size: 18px;">请手动复制以下红色部分内容</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
-        <h5 class="col-12" id="code"></h5>
+        <h5 class="col-12" id="code" style="color:red;"></h5>
     </div>
     </div>
 </div>
@@ -144,8 +144,10 @@
 
 <script>
     var clipboard = new ClipboardJS('a');
-
     $('#modal').click();
+
+    if(ClipboardJS.isSupported())
+        $('#modal').click();
 
     clipboard.on('success', function(e) {
         console.info('Action:', e.action);
@@ -158,8 +160,6 @@
     clipboard.on('error', function(e) {
         console.error('Action:', e.action);
         console.error('Trigger:', e.trigger);
-
-        $('#modal').click();
     });
 
     var query = parseQueryString();
